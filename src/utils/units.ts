@@ -9,7 +9,7 @@ export const newUnit = (fid: number, nodes: readonly Node[], isChild = false): U
   pos: 0,
 });
 
-export const nodeIds = (unit: Unit): readonly string[] => unit.nodes.map(prop('id'));
+export const nodeIds = (unit: Unit): readonly string[] => unit.nodes.map(prop('id')).sort();
 export const nodeCount = (unit: Unit): number => unit.nodes.length;
 export const hasChildren = (unit: Unit): boolean => unit.nodes.some((node) => node.children.length);
 export const rightSide = (unit: Unit): number => unit.pos + nodeCount(unit) * SIZE;
